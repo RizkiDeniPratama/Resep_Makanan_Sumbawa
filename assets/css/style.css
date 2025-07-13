@@ -1,0 +1,1559 @@
+/* Reset CSS - Menghapus default styling browser */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Membuat width/height include padding dan border */
+}
+
+/* Modern Header Styles */
+.modern-header {
+  position: relative;
+  background: #1a1a1a;
+  color: white;
+}
+
+/* Navigation Bar - Sticky */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+/* Remove blue outline from navbar elements */
+.navbar input:focus,
+.navbar button:focus,
+.navbar a:focus,
+.navbar select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.nav-search-input:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.hero-search-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Logo di kiri */
+.logo-modern {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+  margin-right: auto;
+}
+
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  font-family: "Georgia", serif;
+  font-weight: 700;
+}
+
+/* Navigation Right Side */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-left: auto;
+}
+
+.nav-menu-modern {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #f39c12;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #f39c12;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Navigation Search Form */
+.nav-search-form {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  padding: 0.3rem;
+  transition: all 0.3s ease;
+}
+
+.nav-search-form:focus-within {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 2px rgba(243, 156, 18, 0.3);
+}
+
+.nav-search-input {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  outline: none;
+  width: 200px;
+  transition: width 0.3s ease;
+}
+
+.nav-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-search-input:focus {
+  width: 250px;
+}
+
+.nav-search-btn {
+  background: #f39c12;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.nav-search-btn:hover {
+  background: #e67e22;
+  transform: scale(1.05);
+}
+
+/* Navigation Actions */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-icon {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-icon:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f39c12;
+}
+
+.submit-recipe-btn {
+  background: transparent;
+  border: 2px solid #f39c12;
+  color: #f39c12;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.submit-recipe-btn:hover {
+  background: #f39c12;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  gap: 0.25rem;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+/* Hero Section - Add padding top for fixed navbar */
+.hero-section {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 80px; /* Space for fixed navbar */
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(52, 73, 94, 0.6)), url("/assets//images/backgroundDPW.jpg")
+    center / cover no-repeat;
+  /* Placeholder background - ganti dengan gambar yang akan Anda upload */
+  background-color: #2c3e50;
+}
+
+.hero-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(243, 156, 18, 0.1) 0%, transparent 50%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-family: "Georgia", serif;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+/* Hero Search */
+.hero-search {
+  max-width: 600px;
+}
+
+.hero-search-form {
+  background: white;
+  border-radius: 50px;
+  padding: 0.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.search-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-search-input {
+  flex: 1;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  background: transparent;
+  outline: none;
+  color: #333;
+}
+
+.hero-search-input::placeholder {
+  color: #666;
+}
+
+.hero-search-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.hero-search-select {
+  border: none;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background: transparent;
+  color: #666;
+  outline: none;
+  cursor: pointer;
+  min-width: 140px;
+}
+
+.hero-search-btn {
+  background: #f39c12;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.hero-search-btn:hover {
+  background: #e67e22;
+  transform: scale(1.05);
+}
+
+/* Add padding to main content for fixed navbar */
+main {
+  padding-top: 80px;
+}
+
+/* Recipe Card - Make entire card clickable */
+.recipe-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove button from recipe card */
+.recipe-card .btn {
+  display: none;
+}
+
+/* Pagination styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 2rem 0;
+}
+
+.pagination a,
+.pagination span {
+  padding: 0.5rem 1rem;
+  background: white;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+}
+
+.pagination .current {
+  background: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+.pagination a:hover {
+  background: #f8f9fa;
+}
+
+/* Detail page styling */
+.recipe-detail {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Detail Recipe Styles - Clean & Elegant */
+.recipe-detail-clean {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-detail-image-clean {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.recipe-detail-content {
+  padding: 2rem;
+}
+
+.recipe-title-clean {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.recipe-description-clean {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.recipe-section-clean {
+  margin-bottom: 2.5rem;
+}
+
+.section-title-clean {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f8f9fa;
+}
+
+/* Ingredients with Checkboxes */
+.ingredients-list-clean {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredient-item-clean {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.ingredient-checkbox {
+  margin-top: 0.2rem;
+  width: 18px;
+  height: 18px;
+  accent-color: #f39c12;
+  cursor: pointer;
+}
+
+.ingredient-text {
+  flex: 1;
+  color: #555;
+  line-height: 1.6;
+}
+
+.ingredient-amount {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Steps with Checkboxes */
+.steps-list-clean {
+  list-style: none;
+  padding: 0;
+  counter-reset: step-counter;
+}
+
+.step-item-clean {
+  counter-increment: step-counter;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.step-checkbox {
+  margin-top: 0.2rem;
+  width: 18px;
+  height: 18px;
+  accent-color: #f39c12;
+  cursor: pointer;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-number {
+  font-weight: 600;
+  color: #f39c12;
+  margin-bottom: 0.5rem;
+}
+
+.step-text {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Action Buttons at Bottom */
+.recipe-actions-clean {
+  display: flex;
+  gap: 1rem;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.action-btn-clean {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.action-btn-clean:hover {
+  border-color: #f39c12;
+  color: #f39c12;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.recipe-header {
+  position: relative;
+}
+
+.recipe-detail-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.recipe-info {
+  padding: 2rem;
+}
+
+.recipe-detail-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.recipe-detail-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.meta-item {
+  text-align: center;
+}
+
+.meta-label {
+  font-weight: bold;
+  color: #2c3e50;
+  display: block;
+}
+
+.meta-value {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Ingredients and steps styling */
+.ingredients-section,
+.steps-section {
+  margin: 2rem 0;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+}
+
+.ingredient-group {
+  margin-bottom: 1.5rem;
+}
+
+.group-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e67e22;
+  margin-bottom: 0.5rem;
+}
+
+.ingredient-list {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.ingredient-list li {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.ingredient-list li:before {
+  content: "•";
+  color: #3498db;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.steps-list {
+  list-style: none;
+  counter-reset: step-counter;
+}
+
+.step-item {
+  counter-increment: step-counter;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.step-item:before {
+  content: "Langkah " counter(step-counter);
+  font-weight: bold;
+  color: #3498db;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* About page styling */
+.about-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  line-height: 1.8;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-member {
+  text-align: center;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.member-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.member-role {
+  color: #3498db;
+  font-weight: 500;
+}
+
+/* Footer styling */
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+/* Alert messages */
+.alert {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+  border-left: 4px solid;
+}
+
+.alert-info {
+  background: #d1ecf1;
+  border-color: #17a2b8;
+  color: #0c5460;
+}
+
+.alert-warning {
+  background: #fff3cd;
+  border-color: #ffc107;
+  color: #856404;
+}
+
+/* Responsive Design - Mobile First Approach */
+
+/* Tablet styling (768px ke atas) */
+@media (min-width: 768px) {
+  .search-form {
+    margin-top: 0;
+    flex: 0 0 300px; /* Fixed width untuk tablet+ */
+  }
+
+  .nav-menu {
+    margin-bottom: 0;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .nav-right {
+    display: none;
+  }
+
+  .nav-menu-modern {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 26, 0.98);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-menu-modern.active {
+    display: flex;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    gap: 0.25rem;
+  }
+
+  .mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .search-input-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-search-input,
+  .hero-search-select {
+    width: 100%;
+  }
+
+  .hero-search-btn {
+    align-self: center;
+  }
+
+  .recipe-detail-content {
+    padding: 1.5rem;
+  }
+
+  .recipe-actions-clean {
+    padding: 1.5rem;
+    flex-direction: column;
+  }
+
+  .action-btn-clean {
+    justify-content: center;
+  }
+}
+
+/* Mobile styling (767px ke bawah) */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 15px; /* Padding lebih kecil di mobile */
+  }
+
+  nav {
+    flex-direction: column; /* Stack vertical */
+    gap: 1rem;
+  }
+
+  .nav-menu {
+    flex-direction: column; /* Menu vertical */
+    width: 100%;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: 2rem; /* Font lebih kecil di mobile */
+  }
+
+  .recipe-grid {
+    grid-template-columns: 1fr; /* Single column di mobile */
+    gap: 1rem;
+  }
+
+  .recipe-detail-title {
+    font-size: 2rem;
+  }
+
+  .recipe-detail-image {
+    height: 250px; /* Image lebih pendek di mobile */
+  }
+
+  .recipe-info {
+    padding: 1rem; /* Padding lebih kecil */
+  }
+
+  .recipe-detail-meta {
+    grid-template-columns: 1fr 1fr; /* 2 kolom di mobile */
+  }
+
+  .pagination {
+    flex-wrap: wrap; /* Wrap pagination di mobile */
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr; /* Single column untuk team */
+  }
+}
+
+/* Very small mobile (480px ke bawah) */
+@media (max-width: 480px) {
+  .recipe-detail-meta {
+    grid-template-columns: 1fr; /* Single column untuk meta */
+  }
+
+  .btn {
+    width: 100%; /* Full width button */
+    text-align: center;
+  }
+
+  .pagination a,
+  .pagination span {
+    padding: 0.3rem 0.6rem; /* Smaller pagination */
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 0 1rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .recipe-title-clean {
+    font-size: 1.5rem;
+  }
+}
+
+/* Hide mobile menu toggle on desktop */
+.mobile-menu-toggle {
+  display: none;
+}
+
+/* Print styling */
+@media print {
+  header,
+  footer,
+  .search-form,
+  .pagination {
+    display: none; /* Hide navigation saat print */
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .recipe-card,
+  .recipe-detail {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
+
+/* Search Toggle Functionality */
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-overlay.active {
+  display: flex;
+}
+
+.search-overlay-content {
+  max-width: 600px;
+  width: 90%;
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+/* Animation untuk mobile menu */
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Styling untuk body */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6; /* Jarak antar baris untuk readability */
+  color: #333;
+  background-color: #f8f9fa; /* Background abu-abu terang */
+}
+
+/* Container utama - membatasi lebar konten */
+.container {
+  max-width: 1200px; /* Lebar maksimal */
+  margin: 0 auto; /* Center horizontal */
+  padding: 0 20px; /* Padding kiri kanan */
+}
+
+/* Header styling */
+header {
+  background: linear-gradient(135deg, #2c3e50, #3498db); /* Gradient background */
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow halus */
+}
+
+/* Navigation styling */
+nav {
+  display: flex;
+  justify-content: space-between; /* Logo kiri, menu kanan */
+  align-items: center;
+  flex-wrap: wrap; /* Wrap untuk mobile */
+}
+
+/* Logo styling */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+/* Menu navigation */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem; /* Jarak antar menu */
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Animasi smooth saat hover */
+}
+
+.nav-menu a:hover {
+  color: #f39c12; /* Warna orange saat hover */
+}
+
+/* Search form styling */
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.search-form input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  flex: 1; /* Mengambil sisa ruang */
+}
+
+.search-form button {
+  padding: 0.5rem 1rem;
+  background: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-form button:hover {
+  background: #e67e22; /* Warna lebih gelap saat hover */
+}
+
+/* Main content area */
+main {
+  padding: 2rem 0;
+  min-height: calc(100vh - 200px); /* Minimal height minus header/footer */
+}
+
+/* Page title */
+.page-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  font-size: 2.5rem;
+}
+
+/* Recipe grid layout */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Recipe card styling */
+.recipe-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden; /* Memotong konten yang keluar */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px); /* Efek naik saat hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Recipe image */
+.recipe-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Crop image untuk fit container */
+  display: block;
+}
+
+/* Recipe content */
+.recipe-content {
+  padding: 1.5rem;
+}
+
+.recipe-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.recipe-description {
+  color: #666;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.recipe-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Button styling */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background: #2980b9;
+}
+
+.btn-primary {
+  background: #3498db;
+}
+
+.btn-secondary {
+  background: #95a5a6;
+}
+
+/* Pagination styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 2rem 0;
+}
+
+.pagination a,
+.pagination span {
+  padding: 0.5rem 1rem;
+  background: white;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+}
+
+.pagination .current {
+  background: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+.pagination a:hover {
+  background: #f8f9fa;
+}
+
+/* Detail page styling */
+.recipe-detail {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-header {
+  position: relative;
+}
+
+.recipe-detail-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.recipe-info {
+  padding: 2rem;
+}
+
+.recipe-detail-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.recipe-detail-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.meta-item {
+  text-align: center;
+}
+
+.meta-label {
+  font-weight: bold;
+  color: #2c3e50;
+  display: block;
+}
+
+.meta-value {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Ingredients and steps styling */
+.ingredients-section,
+.steps-section {
+  margin: 2rem 0;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+}
+
+.ingredient-group {
+  margin-bottom: 1.5rem;
+}
+
+.group-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e67e22;
+  margin-bottom: 0.5rem;
+}
+
+.ingredient-list {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.ingredient-list li {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.ingredient-list li:before {
+  content: "•";
+  color: #3498db;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.steps-list {
+  list-style: none;
+  counter-reset: step-counter;
+}
+
+.step-item {
+  counter-increment: step-counter;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.step-item:before {
+  content: "Langkah " counter(step-counter);
+  font-weight: bold;
+  color: #3498db;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* About page styling */
+.about-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  line-height: 1.8;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-member {
+  text-align: center;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.member-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.member-role {
+  color: #3498db;
+  font-weight: 500;
+}
+
+/* Footer styling */
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+/* Alert messages */
+.alert {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+  border-left: 4px solid;
+}
+
+.alert-info {
+  background: #d1ecf1;
+  border-color: #17a2b8;
+  color: #0c5460;
+}
+
+.alert-warning {
+  background: #fff3cd;
+  border-color: #ffc107;
+  color: #856404;
+}
+
+/* Responsive Design - Mobile First Approach */
+
+/* Tablet styling (768px ke atas) */
+@media (min-width: 768px) {
+  .search-form {
+    margin-top: 0;
+    flex: 0 0 300px; /* Fixed width untuk tablet+ */
+  }
+
+  .nav-menu {
+    margin-bottom: 0;
+  }
+}
+
+/* Mobile styling (767px ke bawah) */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 15px; /* Padding lebih kecil di mobile */
+  }
+
+  nav {
+    flex-direction: column; /* Stack vertical */
+    gap: 1rem;
+  }
+
+  .nav-menu {
+    flex-direction: column; /* Menu vertical */
+    width: 100%;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: 2rem; /* Font lebih kecil di mobile */
+  }
+
+  .recipe-grid {
+    grid-template-columns: 1fr; /* Single column di mobile */
+    gap: 1rem;
+  }
+
+  .recipe-detail-title {
+    font-size: 2rem;
+  }
+
+  .recipe-detail-image {
+    height: 250px; /* Image lebih pendek di mobile */
+  }
+
+  .recipe-info {
+    padding: 1rem; /* Padding lebih kecil */
+  }
+
+  .recipe-detail-meta {
+    grid-template-columns: 1fr 1fr; /* 2 kolom di mobile */
+  }
+
+  .pagination {
+    flex-wrap: wrap; /* Wrap pagination di mobile */
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr; /* Single column untuk team */
+  }
+}
+
+/* Very small mobile (480px ke bawah) */
+@media (max-width: 480px) {
+  .recipe-detail-meta {
+    grid-template-columns: 1fr; /* Single column untuk meta */
+  }
+
+  .btn {
+    width: 100%; /* Full width button */
+    text-align: center;
+  }
+
+  .pagination a,
+  .pagination span {
+    padding: 0.3rem 0.6rem; /* Smaller pagination */
+    font-size: 0.9rem;
+  }
+}
+
+/* Print styling */
+@media print {
+  header,
+  footer,
+  .search-form,
+  .pagination {
+    display: none; /* Hide navigation saat print */
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .recipe-card,
+  .recipe-detail {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
+
+/* Loading animation */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styling untuk accessibility */
+a:focus,
+button:focus,
+input:focus {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .recipe-card {
+    border: 2px solid #000;
+  }
+
+  .btn {
+    border: 2px solid #000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
